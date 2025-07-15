@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Physics by VG</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom right, #e0eafc, #cfdef3);
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+
+    header .tagline {
+      margin-top: 10px;
+      font-style: italic;
+      font-size: 1.3em;
+      color: #ecf0f1;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .info ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+
+    .info li {
+      margin: 8px 0;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .feature {
+      flex: 1 1 200px;
+      background: #f2f2f2;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .slider {
+      text-align: center;
+      position: relative;
+    }
+
+    .slider img {
+      width: 80%;
+      max-height: 400px;
+      border-radius: 10px;
+    }
+
+    .slider button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(44, 62, 80, 0.7);
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 50%;
+    }
+
+    .slider button:hover {
+      background: rgba(44, 62, 80, 1);
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    .fees p {
+      background: #ecf0f1;
+      padding: 10px;
+      margin: 5px 0;
+      text-align: center;
+      font-size: 1.1em;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Physics by VG</h1>
+    <p class="tagline">"Trust Yourself — Learn, Grow, Excel"</p>
+  </header>
+
+  <section class="info">
+    <h2>Welcome to Physics by VG</h2>
+    <p>Where learning meets excellence! We provide a comfortable learning environment with the following features:</p>
+    <ul>
+      <li>AC Environment</li>
+      <li>Filtered Drinking Water</li>
+      <li>Well-equipped Study Room</li>
+      <li>Doubt Clearing Sessions</li>
+      <li>Weekly Tests & Feedback</li>
+    </ul>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Expert Faculty</h3>
+        <p>Guidance from experienced teachers.</p>
+      </div>
+      <div class="feature">
+        <h3>Small Batches</h3>
+        <p>Individual attention to every student.</p>
+      </div>
+      <div class="feature">
+        <h3>Regular Practice</h3>
+        <p>Practice sheets & assignments provided.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <h2>Gallery</h2>
+    <div class="slider">
+      <button class="prev">&#10094;</button>
+      <img id="slide" src="images/1.png" alt="Slider Image">
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+  <section class="fees">
+    <h2>Fee Structure</h2>
+    <p><strong>Biology:</strong> ₹5000/year</p>
+    <p><strong>Physics:</strong> ₹6000/year</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Physics by VG | Empowering Students to Shine!
+  </footer>
+
+  <script>
+    const images = [
+      'images/1.png',
+      'images/2.png',
+      'images/3.png',
+      'images/4.png',
+      'images/5.png'
+    ];
+    let index = 0;
+    const slide = document.getElementById('slide');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+
+    prev.addEventListener('click', () => {
+      index = (index - 1 + images.length) % images.length;
+      slide.src = images[index];
+    });
+
+    next.addEventListener('click', () => {
+      index = (index + 1) % images.length;
+      slide.src = images[index];
+    });
+  </script>
+</body>
+</html>
